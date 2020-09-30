@@ -1,15 +1,15 @@
 .cards__heart {
   width: 21px;
   height: 18px;
-  background-repeat: no-repeat;
   background-image: url(../../../img/heart.svg);
-  align-self: center;
+  background-repeat: no-repeat;
   background-color: white;
+  align-self: center;
   border: none;
-  margin-left: 12px;
+  margin-left: 10px;
 }
 
 .cards__heart:hover {
-  opacity: .6;
+  opacity: 0.6;
   cursor: pointer;
 }
