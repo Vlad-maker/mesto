@@ -1,0 +1,7 @@
+
+.cards__photo {
+  object-fit: cover;
+  width: 100%;
+  min-height: 282px;
+  flex: 1;
+}

@@ -1,0 +1,9 @@
+ 
+.cards__item {
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #FFFFFF;
+  color: black;
+  display: flex;
+  flex-direction: column;
+}

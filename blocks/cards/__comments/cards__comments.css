@@ -1,0 +1,8 @@
+.cards__comments {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+  margin-bottom: 31px;
+  margin-left: 21px;
+  margin-right: 15px;
+}

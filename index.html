@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Место</title>
+  <link rel="stylesheet" href="pages/index.css">
+</head>
+
+<body class="root">
+
+    <header class="header">
+      <div class="header__logo">
+      </div>
+    </header>
+
+    <section class="popup">
+      <div class="popup__overlay"></div>
+      <div class="popup__container">
+        <button class="popup__close">
+          <img class="popup__close-icon" src="./img/close.png" alt="Иконка закрытия">
+        </button>
+        <form class="popup__content" name="profile">
+          <h2 class="popup__title">Редактировать профиль</h2>
+          <input type="text" class="popup__text" name="name" placeholder="Имя" value="" />
+          <input type="text" class="popup__text" name="description" placeholder="Описание" value=""/>
+          <button type="submit" class="popup__button">Сохранить</button>
+        </form>
+      </div>
+    </section>
+
+    <main class="content">
+
+      <section class="profile">
+        <div class="profile__content">
+          <img src="./img/kusto.jpg" alt="Исследователь океана Жак-Ив Кусто" class="profile__avatar" >
+          <div class="profile__info">
+            <div class="profile__info-travelers">
+              <p class="profile__info-name">Жак-Ив Кусто</p>
+              <button class="profile__info-button"></button>
+            </div>
+            <p class="profile__info-job">Исследователь океана</p>
+          </div>
+        </div>  
+        <button class="profile__button">+</button>
+      </section> 
+
+      <section class="cards">
+
+        <ul class="cards__list">
+          <li class="cards__item">
+            <img class="cards__photo" src="./img/more1.jpg" alt="Море">
+            <div class="cards__comments">
+              <p class="cards__title">Аравийское море</p>
+              <button class="cards__heart"></button>
+            </div> 
+          </li> 
+          <li class="cards__item">
+            <img class="cards__photo" src="./img/more2.jpg" alt="Море">
+            <div class="cards__comments">
+              <p class="cards__title">Балеарское море</p>
+              <button class="cards__heart"></button>
+            </div> 
+          </li>
+          <li class="cards__item">
+            <img class="cards__photo" src="./img/more3.jpg" alt="Море">
+            <div class="cards__comments">
+              <p class="cards__title">Ирландское море</p>
+              <button class="cards__heart"></button>
+            </div> 
+          </li>
+          <li class="cards__item">
+            <img class="cards__photo" src="./img/more4.jpg" alt="Море">
+            <div class="cards__comments">
+              <p class="cards__title">Красное море</p>
+              <button class="cards__heart"></button>
+            </div> 
+          </li> 
+          <li class="cards__item">
+            <img class="cards__photo" src="./img/more5.jpg" alt="Море">
+            <div class="cards__comments">
+              <p class="cards__title">Левантийское море</p>
+              <button class="cards__heart"></button>
+            </div> 
+          </li>
+          <li class="cards__item">
+            <img class="cards__photo" src="./img/more6.jpg" alt="Море">
+            <div class="cards__comments">
+              <p class="cards__title">Новогвинейское море</p>
+              <button class="cards__heart"></button>
+            </div> 
+          </li>    
+        </ul> 
+
+       </section>  
+
+    </main>
+
+    <footer class="footer">
+      <p class="footer__content">© 2020 Mesto Russia</p>  
+    </footer>
+
+    <script src="./script.js"></script>    
+
+</body>
+</html>
