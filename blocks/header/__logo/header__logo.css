@@ -1,17 +1,18 @@
 .header__logo {
-    width: 144px;
-    height: 34px;
-    background-image: url(../../../img/logo.svg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    
+  background-image: url(../../../img/logo.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 144px;
+  height: 34px;  
 }
-  @media screen and (max-width: 320px) {
-    .header__logo { 
-      width: 103px;
-      height: 24px;
-    }}
-    .header__logo:hover {
-      opacity: 0.5;
-      cursor: pointer;
-    }
+
+@media screen and (max-width: 425px) {
+  .header__logo { 
+    width: 103px;
+    height: 24px;
+  }}
+
+.header__logo:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}

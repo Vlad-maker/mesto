@@ -1,12 +1,18 @@
- 
 .footer__content {
   margin: 0;
-    font-size: 18px;
-    line-height: 22px;
-    color: #545454;
-  }
-  @media screen and (max-width: 550px) {
+  font-size: 18px;
+  line-height: 22px;
+  color: #545454;
+}
+
+  @media screen and (min-width: 1280px) {
+    .footer__content { 
+      padding-bottom: 60px;
+    }} 
+
+
+  @media screen and (max-width: 520px) {
     .footer__content { 
       font-size: 14px;
       line-height: 17px;
-  }} 
+    }} 

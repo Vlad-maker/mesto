@@ -8,31 +8,25 @@ const jobContent = document.querySelector('.profile__info-job');
 let formElement = document.querySelector('.popup__content');
 
 
-/*Открываем попап*/
 function openPopup() {
     nameInput.value = nameContent.innerText;
     jobInput.value = jobContent.innerText;
     popup.classList.add('popup_opened');
 }
+editBtn.addEventListener('click', openPopup);
 
-
-/*Закрываем попап*/
 function closePopup() {
     popup.classList.remove('popup_opened');
 }
-
-editBtn.addEventListener('click', openPopup);
 closeBtn.addEventListener('click', closePopup);
 
-
-/*Редактируем профиль*/
 function formSubmitHandler (evt) {
     evt.preventDefault(); 
     const name = nameInput.value;
     const job = jobInput.value;
     nameContent.textContent = name;
     jobContent.textContent = job;
-
     closePopup();
 }
+
 formElement.addEventListener('submit', formSubmitHandler); 

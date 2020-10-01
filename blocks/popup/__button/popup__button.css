@@ -1,15 +1,15 @@
 .popup__button {
   font-size: 18px;
   line-height: 22px;
+  text-align: center;
   background-color: #000;
+  color: #fff;
   border: none;
   border-radius: 2px;
-  color: #FFFFFF;
-  text-align: center;
-  padding-top: 13px;
-  padding-bottom: 18px;
+  padding: 13px 0 18px 0;
 }
+
 .popup__button:hover {
-  opacity: .8;
+  opacity: 0.8;
   cursor: pointer;
 }

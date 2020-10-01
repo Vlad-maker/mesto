@@ -1,8 +1,8 @@
 .cards__item {
-  	display: flex;
-  	flex-direction: column;
-  	border-radius: 10px;
-  	background-color: #fff;
-  	overflow: hidden;
-  	color: black;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background-color: #fff;
+  overflow: hidden;
+  color: black;
 }

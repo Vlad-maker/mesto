@@ -3,12 +3,14 @@
   width: 52px;
   height: 52px;
 }
-@media screen and (max-width: 550px) {
+
+@media screen and (max-width: 520px) {
   .popup__close-icon { 
     width: 26px;
     height: 26px; 
-}} 
+  }}
+
 .popup__close-icon:hover {
-  opacity: .6;
+  opacity: 0.6;
   cursor: pointer;
 }

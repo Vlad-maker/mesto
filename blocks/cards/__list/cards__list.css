@@ -1,5 +1,7 @@
 .cards__list {
   width: 100%;
+  margin: 0 auto;
+  padding: 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
   grid-template-rows: repeat(auto-fit, minmax(282px, 1fr));
@@ -9,6 +11,4 @@
   object-fit: cover;
   justify-content: center;
   list-style-type: none;
-  margin: 0 auto;
-  padding: 0;
 }
