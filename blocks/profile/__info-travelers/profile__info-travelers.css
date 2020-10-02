@@ -1,3 +1,4 @@
 .profile__info-travelers {
   display: flex;
+  align-items: center;
 }

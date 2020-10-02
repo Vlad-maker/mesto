@@ -2,12 +2,18 @@
   margin: 0;
   font-size: 18px;
   line-height: 20px;
-  padding-top: 16px;
+  padding-top: 10px;
+  
 }
+@media screen and (max-width: 900px) {
+  .profile__info-job { 
+    text-align: center;
+  }} 
+
 
 @media screen and (max-width: 768px) {
   .profile__info-job { 
     font-size: 14px;
     line-height: 17px;
-    padding-top: 14px;
+    padding-top: 0;
   }} 

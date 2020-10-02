@@ -8,6 +8,11 @@
   overflow: hidden;
 }
 
+@media screen and (max-width: 900px) {
+  .profile__info-name {
+    margin-top: 14px;
+}} 
+
 @media screen and (max-width: 768px) {
   .profile__info-name { 
     font-size: 36px;

@@ -1,7 +1,6 @@
 .popup__button {
   font-size: 18px;
   line-height: 22px;
-  text-align: center;
   background-color: #000;
   color: #fff;
   border: none;
@@ -13,3 +12,10 @@
   opacity: 0.8;
   cursor: pointer;
 }
+
+@media screen and (max-width: 425px) {
+  .popup__button {
+    font-size: 14px;
+    line-height: auto;
+  
+}} 

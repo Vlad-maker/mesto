@@ -6,8 +6,8 @@
 
 @media screen and (max-width: 520px) {
   .popup__close-icon { 
-    width: 26px;
-    height: 26px; 
+    width: 36px;
+    height: 36px; 
   }}
 
 .popup__close-icon:hover {
