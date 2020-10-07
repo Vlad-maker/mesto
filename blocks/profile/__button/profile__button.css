@@ -1,6 +1,9 @@
 .profile__button {
   width: 150px;
   height: 50px; 
+  background-image: url(../../../img/plus.svg);
+  background-position: center;
+  background-repeat: no-repeat;
   align-self: flex-start;
   margin-top: 75px; 
   border: 2px solid #fff;

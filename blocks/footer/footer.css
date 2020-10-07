@@ -1,3 +1,9 @@
 .footer {
   margin: 0 auto;
 }
+
+@media screen and (max-width: 320px) {
+  .footer { 
+    padding-right: 19px;
+    padding-left: 19px;
+  }}

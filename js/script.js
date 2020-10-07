@@ -7,7 +7,6 @@ const nameContent = document.querySelector('.profile__info-name');
 const jobContent = document.querySelector('.profile__info-job');
 let formElement = document.querySelector('.popup__content');
 
-
 function openPopup() {
     nameInput.value = nameContent.innerText;
     jobInput.value = jobContent.innerText;
@@ -22,10 +21,8 @@ closeBtn.addEventListener('click', closePopup);
 
 function formSubmitHandler (evt) {
     evt.preventDefault(); 
-    const name = nameInput.value;
-    const job = jobInput.value;
-    nameContent.textContent = name;
-    jobContent.textContent = job;
+    nameContent.textContent = nameInput.value;
+    jobContent.textContent = jobInput.value;
     closePopup();
 }
 

@@ -9,3 +9,9 @@
     padding-top: 35px;
   	padding-bottom: 50px;
   }} 
+
+@media screen and (max-width: 320px) {
+  .cards { 
+    padding-right: 19px;
+    padding-left: 19px;
+  }}
