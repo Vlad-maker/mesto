@@ -8,7 +8,7 @@
 @import url("../blocks/header/__logo/header__logo.css");
 
 @import url("../blocks/popup/popup.css");
-@import url("../blocks/popup/popup_opened.css");
+@import url("../blocks/popup/_opened/popup_opened.css");
 @import url("../blocks/popup/__overlay/popup__overlay.css");
 @import url("../blocks/popup/__container/popup__container.css");
 @import url("../blocks/popup/__close/popup__close.css");
