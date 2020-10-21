@@ -28,12 +28,12 @@
 @import url("../blocks/profile/__button/profile__button.css");
 
 @import url("../blocks/cards/cards.css");
-@import url("../blocks/cards/__list/cards__list.css");
-@import url("../blocks/cards/__item/cards__item.css");
+@import url("../blocks/cards/__grid/cards__grid.css");
+@import url("../blocks/cards/__content/cards__content.css");
 @import url("../blocks/cards/__photo/cards__photo.css");
-@import url("../blocks/cards/__comments/cards__comments.css");
+@import url("../blocks/cards/__description/cards__description.css");
 @import url("../blocks/cards/__title/cards__title.css");
-@import url("../blocks/cards/__heart/cards__heart.css");
+@import url("../blocks/cards/__like/cards__like.css");
 
 @import url("../blocks/footer/footer.css");
 @import url("../blocks/footer/__content/footer__content.css");
