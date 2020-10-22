@@ -9,6 +9,6 @@ URL: https://vlad-maker.github.io/mesto/
 
 HTML5
 CSS3
-JavaScript
+JavaScript (ES6)
 
 Использованы изображения с https://unsplash.com 

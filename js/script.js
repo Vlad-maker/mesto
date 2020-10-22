@@ -1,3 +1,62 @@
+
+const initialCards = [
+    {
+        name: 'Архыз',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+    },
+    {
+        name: 'Челябинская область',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+    },
+    {
+        name: 'Иваново',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+    },
+    {
+        name: 'Камчатка',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+    },
+    {
+        name: 'Холмогорский район',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+    },
+    {
+        name: 'Байкал',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+    }
+]; 
+
+const template = document.querySelector('template');
+const cardContainer = document.querySelector('.cards__grid');
+const addCardButton = document.querySelector('.profile__button');
+const popupPhoto = document.querySelector('.popup__photo');
+
+//Добавляем карточки на страницу 
+initialCards.forEach((data) => {
+    const cardElement = template.cloneNode(true).content;
+    const cardTitle = cardElement.querySelector(".cards__title");
+    const cardImage = cardElement.querySelector(".cards__photo");
+
+    cardTitle.textContent = data.name;
+    cardImage.src = data.link;
+    
+    cardContainer.append(cardElement);
+
+    
+})
+
+//Открываем попап добавления фото
+const togglePopup = (popup) => {
+    popup.classList.toggle('popup_opened');
+}
+const bindListeners =() => {
+    addCardButton.addEventListener('click', () => togglePopup(popupPhoto));
+}
+
+bindListeners();
+
+  
+
 const editBtn = document.querySelector('.profile__info-button');
 const closeBtn = document.querySelector('.popup__close');
 const popup = document.querySelector('.popup');
@@ -21,7 +80,7 @@ function closePopup() {
 }
 closeBtn.addEventListener('click', closePopup);
 
-
+//Сохранили отредактированные данные
 function formSubmitHandler (evt) {
     evt.preventDefault();
     profileName.textContent = nameInput.value;
@@ -39,28 +98,3 @@ formElement.addEventListener('submit', formSubmitHandler);
 
 
 
-
-// Находим форму в DOM
-//let formElement = // Воспользуйтесь методом querySelector()
-
-// Обработчик «отправки» формы, хотя пока
-// она никуда отправляться не будет
-//function formSubmitHandler (evt) {
-  //  evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
-                        // Так мы можем определить свою логику отправки.
-                        // О том, как это делать, расскажем позже.
-
-    // Находим поля формы в DOM
-    //let nameInput = // Воспользуйтесь инструментом .querySelector()
-    //let jobInput = // Воспользуйтесь инструментом .querySelector()
-
-    // Получите значение полей из свойства value
-
-    // Выберите элементы, куда должны быть вставлены значения полей
-
-    // Вставьте новые значения с помощью textContent
-//}
-
-// Прикрепляем обработчик к форме:
-// он будет следить за событием “submit” - «отправка»
-//formElement.addEventListener('submit', formSubmitHandler); 

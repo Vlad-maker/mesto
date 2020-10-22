@@ -29,70 +29,63 @@
         </div>  
         <button class="profile__button" type="button"></button>
       </section> 
-
+   
       <section class="cards">
-        <ul class="cards__grid">
-            <li class="cards__content">
-              <img class="cards__photo" src="./img/more1.jpg" alt="Аравийское море">
-              <div class="cards__description">
-                <h2 class="cards__title">Аравийское море</h2>
-                <button class="cards__like" type="button"></button>
-              </div> 
-            </li> 
-            <li class="cards__content">
-              <img class="cards__photo" src="./img/more2.jpg" alt="Балеарское море">
-              <div class="cards__description">
-                <h2 class="cards__title">Балеарское море</h2>
-                <button class="cards__like" type="button"></button>
-              </div> 
-            </li>
-            <li class="cards__content">
-              <img class="cards__photo" src="./img/more3.jpg" alt="Ирландское море">
-              <div class="cards__description">
-                <h2 class="cards__title">Ирландское море</h2>
-                <button class="cards__like" type="button"></button>
-              </div> 
-            </li>
-            <li class="cards__content">
-              <img class="cards__photo" src="./img/more4.jpg" alt="Красное море">
-              <div class="cards__description">
-                <h2 class="cards__title">Красное море</h2>
-                <button class="cards__like" type="button"></button>
-              </div> 
-            </li> 
-            <li class="cards__content">
-              <img class="cards__photo" src="./img/more5.jpg" alt="Левантийское море">
-              <div class="cards__description">
-                <h2 class="cards__title">Левантийское море</h2>
-                <button class="cards__like" type="button"></button>
-              </div> 
-            </li>
-            <li class="cards__content">
-              <img class="cards__photo" src="./img/more6.jpg" alt="Новогвинейское море">
-              <div class="cards__description">
-                <h2 class="cards__title">Новогвинейское море</h2>
-                <button class="cards__like" type="button"></button>
-              </div> 
-            </li>  
-        </ul> 
-      </section>  
-
-      <section class="popup">
-        <div class="popup__overlay"></div>
-        <div class="popup__container">
-          <button class="popup__close" type="button">
-            <img class="popup__close-icon" src="./img/close.svg" alt="Закрыть окно">
+      <ul class="cards__grid">
+      <template id="template">
+        <li class="cards__content">
+          <button class="cards__deletion" type="button" aria-label="Удалить"></button>
+          <button type="button" class="cards__open-button">
+          <img class="cards__photo" src="" alt="Фото из библиотеки">
           </button>
-          <form class="popup__content" name="profile">
-              <h2 class="popup__title">Редактировать профиль</h2>
-              <input type="text" class="popup__text" name="name" placeholder="Имя" value="" />
-              <input type="text" class="popup__text" name="description" placeholder="Описание" value=""/>
-              <button type="submit" class="popup__button">Сохранить</button>
-        </form>
-        </div>
+          <div class="cards__description">
+            <h2 class="cards__title"></h2>
+            <button class="cards__like" type="button" aria-label="Нравится"></button>
+          </div>
+        </li>
+      </template>
+      </ul>
       </section>
 
     </main>
+
+    <section class="popup popup_info">
+      <div class="popup__overlay"></div>
+      <div class="popup__container">
+        <button class="popup__close popup__close-button_info" type="button">
+          <img class="popup__close-icon" src="./img/close.svg" alt="Закрыть окно">
+        </button>
+        <form class="popup__content" name="profile">
+            <h2 class="popup__title">Редактировать профиль</h2>
+            <input type="text" class="popup__text popup__text_name" name="name" placeholder="Имя" value="" />
+            <input type="text" class="popup__text popup__text_description" name="description" placeholder="Описание" value=""/>
+            <button type="submit" class="popup__button popup__button_save">Сохранить</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="popup popup_photo">
+      <div class="popup__overlay"></div>
+      <div class="popup__container">
+        <button class="popup__close popup__close-button_photo" type="button">
+          <img class="popup__close-icon" src="./img/close.svg" alt="Закрыть окно">
+        </button>
+        <form class="popup__content popup__content_photos" name="popup-add-photo" method="post">
+          <h2 class="popup__title">Новое место</h2>
+          <input type="text" class="popup__text popup__text_img-name" name="Name" placeholder="Имя" value="" />
+          <input type="text" class="popup__text popup__text_link" name="Link" placeholder="Ссылка на картинку" value="" />
+          <button type="submit" class="popup__button popup__button_create">Создать</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="popup img-popup">
+      <div class="popup__container popup__container_img">
+        <button class="popup__close popup__close-button_img" type="button"></button>
+          <img class="img-popup__photo" src="" alt="Открытое фото из галереи">
+          <p class="img-popup__caption"></p>
+      </div>
+    </section>
 
     <footer class="footer">
       <p class="footer__content">© 2020 Mesto Russia</p>  
