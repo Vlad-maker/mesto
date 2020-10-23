@@ -1,0 +1,12 @@
+.popup__container_img {
+  background: none;
+  max-width: 75vw;
+  max-height: 75vh;
+  width: fit-content;
+  /* display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: max-content 15px;
+  gap: 10px;
+  margin: 40px auto 0;*/
+  padding: 0; 
+}

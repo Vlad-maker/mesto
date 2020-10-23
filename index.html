@@ -70,10 +70,10 @@
         <button class="popup__close popup__close-button_photo" type="button">
           <img class="popup__close-icon" src="./img/close.svg" alt="Закрыть окно">
         </button>
-        <form class="popup__content popup__content_photos" name="popup-add-photo" method="post">
+        <form class="popup__content popup__content_photo" name="popup-add-photo" method="post">
           <h2 class="popup__title">Новое место</h2>
-          <input type="text" class="popup__text popup__text_img-name" name="Name" placeholder="Имя" value="" />
-          <input type="text" class="popup__text popup__text_link" name="Link" placeholder="Ссылка на картинку" value="" />
+          <input type="text" class="popup__text popup__text_img-name" name="name" placeholder="Имя" value="" />
+          <input type="text" class="popup__text popup__text_link" name="link" placeholder="Ссылка на картинку" value="" />
           <button type="submit" class="popup__button popup__button_create">Создать</button>
         </form>
       </div>
@@ -81,8 +81,10 @@
 
     <section class="popup img-popup">
       <div class="popup__container popup__container_img">
-        <button class="popup__close popup__close-button_img" type="button"></button>
-          <img class="img-popup__photo" src="" alt="Открытое фото из галереи">
+        <button class="popup__close popup__close-button_img" type="button">
+          <img class="popup__close-icon" src="./img/close.svg" alt="Закрыть окно">
+        </button>
+          <img class="img-popup__photo" src="" alt="">
           <p class="img-popup__caption"></p>
       </div>
     </section>
