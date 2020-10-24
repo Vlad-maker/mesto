@@ -2,3 +2,8 @@
   padding-top: 40px;
   margin: 0 auto;
 }
+
+@media screen and (max-width: 520px) {
+  .img-popup { 
+    margin-top: 30px;
+  }}

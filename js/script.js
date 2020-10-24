@@ -1,4 +1,3 @@
-
 const initialCards = [
     {
         name: 'Архыз',
@@ -39,7 +38,7 @@ const popupImgName = addPopupContent.querySelector('.popup__text_img-name');
 const popupImg = document.querySelector('.img-popup');
 const popupImgPhoto = popupImg.querySelector('.img-popup__photo');
 const popupImgCaption = popupImg.querySelector('.img-popup__caption');
-//let closePopupBtnImg = popupImg.querySelector('.popup__close-button_img');
+let closePopupBtnImg = popupImg.querySelector('.popup__close-button_img');
 
 const editBtn = document.querySelector('.profile__info-button');
 const closeBtn = document.querySelector('.popup__close');
@@ -73,7 +72,6 @@ function openPopup() {
     }
     formElement.addEventListener('submit', formSubmitHandler);
 
-
 //Открываем попап добавления фото
 const togglePopup = (popup) => {
     popup.classList.toggle('popup_opened');
@@ -86,8 +84,7 @@ const addPopupContentSubmit = (event) => {
         name: popupImgName.value,
         link: popupImgLink.value
     })
-    cardContainer.prepend(cardItem);
-    
+    cardContainer.prepend(cardItem);   
 };
 
 //Kонструктор карточки
@@ -103,7 +100,22 @@ const getCardItem = (cardDetails) => {
     cardTitle.textContent = cardDetails.name;
     cardImage.src = cardDetails.link;
 
+    //Like <3
+    const likeBtn = cardElement.querySelector('.cards__like');
+    likeBtn.addEventListener('click', (evt) => {
+       evt.target.classList.toggle('cards__like_active');
+    });
+
+    //Delet
+    const deleteBtn = cardElement.querySelector('.cards__deletion');
+    deleteBtn.addEventListener('click', deleteCard);
+
     return cardElement;
+};
+
+//Функция удаления карточки
+function deleteCard(evt) {
+    evt.target.closest('.cards__content').remove();
 };
 
 //Увеличиваем картинку
@@ -111,10 +123,10 @@ const handleImgPreviw = (details) => {
     popupImgPhoto.src = details.link;
     popupImgPhoto.alt = `Изображение ${details.name}`;
     popupImgCaption.textContent = details.name;
-    
     togglePopup(popupImg);
-    //closePopupBtnImg.addEventListener('click', () => closePopup(popupImg));
-}
+};
+//Закрываем увеличенную картинку
+closePopupBtnImg.addEventListener('click', () => togglePopup(popupImg));
 
 const bindListeners = () => {
     addCardButton.addEventListener('click', () => {
@@ -125,7 +137,6 @@ const bindListeners = () => {
     });
     addPopupContent.addEventListener('submit', addPopupContentSubmit);
 };
-
 bindListeners();
 
 //Добавляем карточки на страницу 
@@ -136,7 +147,7 @@ initialCards.forEach((data) => {
 
 
 
-
+ 
 
 
 
