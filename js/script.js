@@ -42,7 +42,7 @@ const closePopupBtnImg = popupImg.querySelector('.popup__close-button_img');
 
 const editBtn = document.querySelector('.profile__info-button');
 const closeBtn = document.querySelector('.popup__close');
-const popup = document.querySelector('.popup');
+const profilePopup = document.querySelector('.popup');
 const profileName = document.querySelector('.profile__info-name');
 const profileJob = document.querySelector('.profile__info-job');
 const nameInput = document.querySelector('input[name="name"]');
@@ -54,12 +54,12 @@ function openPopup() {
     //Cкопировали первоначальное имя и должность в попап
         nameInput.value = profileName.textContent;
         jobInput.value = profileJob.textContent;
-        popup.classList.toggle('popup_opened');
+        togglePopup(profilePopup);
     }
     editBtn.addEventListener('click', openPopup);
     //3акрытие попапа
     function closePopup() {
-        popup.classList.toggle('popup_opened');
+        togglePopup(profilePopup);
     }
     closeBtn.addEventListener('click', closePopup);
     
@@ -73,8 +73,8 @@ function openPopup() {
     formElement.addEventListener('submit', formSubmitHandler);
 
 //Открываем попап добавления фото
-const togglePopup = (popup) => {
-    popup.classList.toggle('popup_opened');
+const togglePopup = (profilePopup) => {
+    profilePopup.classList.toggle('popup_opened');
 };
 
 //Сохраняем новое фото в массив
