@@ -38,28 +38,28 @@ const popupImgName = addPopupContent.querySelector('.popup__text_img-name');
 const popupImg = document.querySelector('.img-popup');
 const popupImgPhoto = popupImg.querySelector('.img-popup__photo');
 const popupImgCaption = popupImg.querySelector('.img-popup__caption');
-let closePopupBtnImg = popupImg.querySelector('.popup__close-button_img');
+const closePopupBtnImg = popupImg.querySelector('.popup__close-button_img');
 
 const editBtn = document.querySelector('.profile__info-button');
 const closeBtn = document.querySelector('.popup__close');
 const popup = document.querySelector('.popup');
 const profileName = document.querySelector('.profile__info-name');
 const profileJob = document.querySelector('.profile__info-job');
-let nameInput = document.querySelector('input[name="name"]');
-let jobInput = document.querySelector('input[name="description"]');
-let formElement = document.querySelector('.popup__content');
+const nameInput = document.querySelector('input[name="name"]');
+const jobInput = document.querySelector('input[name="description"]');
+const formElement = document.querySelector('.popup__content');
 
 //Открытие попапа
 function openPopup() {
     //Cкопировали первоначальное имя и должность в попап
         nameInput.value = profileName.textContent;
         jobInput.value = profileJob.textContent;
-        popup.classList.add('popup_opened');
+        popup.classList.toggle('popup_opened');
     }
     editBtn.addEventListener('click', openPopup);
     //3акрытие попапа
     function closePopup() {
-        popup.classList.remove('popup_opened');
+        popup.classList.toggle('popup_opened');
     }
     closeBtn.addEventListener('click', closePopup);
     
@@ -84,7 +84,10 @@ const addPopupContentSubmit = (event) => {
         name: popupImgName.value,
         link: popupImgLink.value
     })
-    cardContainer.prepend(cardItem);   
+    
+    cardContainer.prepend(cardItem);
+    togglePopup(popupPhoto);  
+    addPopupContent.reset(); //обнулил форму
 };
 
 //Kонструктор карточки
@@ -99,6 +102,7 @@ const getCardItem = (cardDetails) => {
 
     cardTitle.textContent = cardDetails.name;
     cardImage.src = cardDetails.link;
+    cardImage.alt = cardDetails.name;
 
     //Like <3
     const likeBtn = cardElement.querySelector('.cards__like');
