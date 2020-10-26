@@ -1,5 +1,5 @@
                 # Проект 4-6: Место
-URL: https://vlad-maker.github.io/mesto/
+URL: https://vlad-maker.github.io/mesto/ 
 
 Проект фото-галерея. На данном этапе возможно:
  -редактировать имя и описание сферы деятельности
