@@ -73,8 +73,8 @@ function openPopup() {
     formElement.addEventListener('submit', formSubmitHandler);
 
 //Открываем попап добавления фото
-const togglePopup = (profilePopup) => {
-    profilePopup.classList.toggle('popup_opened');
+const togglePopup = (popup) => {
+    popup.classList.toggle('popup_opened');
 };
 
 //Сохраняем новое фото в массив
