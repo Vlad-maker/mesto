@@ -29,6 +29,8 @@ const template = document.querySelector('template');
 const cardContainer = document.querySelector('.cards__grid');
 const addCardButton = document.querySelector('.profile__button');
 
+const popupInfo = document.querySelector('.popup_info');
+
 const popupPhoto = document.querySelector('.popup_photo');
 const closePopupBtn = popupPhoto.querySelector('.popup__close-button_photo');
 const addPopupContent = popupPhoto.querySelector('.popup__content_photo');
@@ -49,32 +51,54 @@ const nameInput = document.querySelector('input[name="name"]');
 const jobInput = document.querySelector('input[name="description"]');
 const formElement = document.querySelector('.popup__content');
 
+//Закрываем popup нажатием на escape
+const pressEscClosePopup =  (evt) => {
+    if (evt.key === "Escape") {
+      const openedPopup = document.querySelector('.popup_opened');
+      togglePopup(openedPopup);
+    }
+  };
+
 //Открытие попапа
 function openPopup() {
-    //Cкопировали первоначальное имя и должность в попап
-        nameInput.value = profileName.textContent;
-        jobInput.value = profileJob.textContent;
-        togglePopup(profilePopup);
+//Cкопировали первоначальное имя и должность в попап
+    nameInput.value = profileName.textContent;
+    jobInput.value = profileJob.textContent;
+    togglePopup(profilePopup);
+    window.addEventListener('keydown', pressEscClosePopup);
     }
-    editBtn.addEventListener('click', openPopup);
-    //3акрытие попапа
-    function closePopup() {
-        togglePopup(profilePopup);
+editBtn.addEventListener('click', openPopup);
+
+//3акрытие попапа
+function closePopup() {
+    togglePopup(profilePopup);
+    window.removeEventListener('keydown', pressEscClosePopup);
     }
-    closeBtn.addEventListener('click', closePopup);
-    
-    //Сохранили отредактированные данные
-    function formSubmitHandler (evt) {
-        evt.preventDefault();
-        profileName.textContent = nameInput.value;
-        profileJob.textContent = jobInput.value;
-        closePopup();
-    }
-    formElement.addEventListener('submit', formSubmitHandler);
+closeBtn.addEventListener('click', closePopup);
+
+//Закрываем попап нажатием на overlay
+const clickOverlayClosePopupListener = (profilePopup) => (evt) => {
+    if (evt.target === evt.currentTarget) {
+      togglePopup(profilePopup);
+        }
+    }; 
+profilePopup.addEventListener('click', clickOverlayClosePopupListener(profilePopup));
+popupPhoto.addEventListener('click', clickOverlayClosePopupListener(popupPhoto));
+popupImg.addEventListener('click', clickOverlayClosePopupListener(popupImg));
+
+//Сохранили отредактированные данные
+function formSubmitHandler (evt) {
+    evt.preventDefault();
+    profileName.textContent = nameInput.value;
+    profileJob.textContent = jobInput.value;
+    closePopup();
+};
+formElement.addEventListener('submit', formSubmitHandler);
 
 //Открываем попап добавления фото
 const togglePopup = (popup) => {
     popup.classList.toggle('popup_opened');
+    window.addEventListener('keydown', pressEscClosePopup);
 };
 
 //Сохраняем новое фото в массив
@@ -87,6 +111,7 @@ const addPopupContentSubmit = (event) => {
     
     cardContainer.prepend(cardItem);
     togglePopup(popupPhoto);  
+    window.removeEventListener('keydown', pressEscClosePopup);
     addPopupContent.reset(); //обнулил форму
 };
 
@@ -128,7 +153,9 @@ const handleImgPreviw = (details) => {
     popupImgPhoto.alt = `Изображение ${details.name}`;
     popupImgCaption.textContent = details.name;
     togglePopup(popupImg);
+    window.addEventListener('keydown', pressEscClosePopup);
 };
+
 //Закрываем увеличенную картинку
 closePopupBtnImg.addEventListener('click', () => togglePopup(popupImg));
 
@@ -138,8 +165,11 @@ const bindListeners = () => {
     });
     closePopupBtn.addEventListener('click', () => {
         togglePopup(popupPhoto);
+        window.removeEventListener('keydown', pressEscClosePopup);
     });
     addPopupContent.addEventListener('submit', addPopupContentSubmit);
+    
+    
 };
 bindListeners();
 
@@ -148,11 +178,4 @@ initialCards.forEach((data) => {
     const cardItem = getCardItem(data);
     cardContainer.append(cardItem);
 });
-
-
-
- 
-
-
-
 

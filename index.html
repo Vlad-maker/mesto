@@ -51,10 +51,12 @@
         <button class="popup__close popup__close-button_info" type="button">
           <img class="popup__close-icon" src="./img/close.svg" alt="Закрыть окно">
         </button>
-        <form class="popup__content" name="profile">
+        <form class="popup__content" name="profile" novalidate>
             <h2 class="popup__title">Редактировать профиль</h2>
-            <input type="text" class="popup__text popup__text_name" name="name" placeholder="Имя" value="" />
-            <input type="text" class="popup__text popup__text_description" name="description" placeholder="Описание" value=""/>
+            <input id="name" minlength="2" maxlength="40" autocomplete="off" type="text" class="popup__text popup__text_name" name="name" placeholder="Имя" required>
+            <span id="name-error" class="popup__text-error"></span>
+            <input id="description" minlength="2" maxlength="200" autocomplete="off" type="text" class="popup__text popup__text_description" name="description" placeholder="Описание" required>
+            <span id="description-error" class="popup__text-error"></span>
             <button type="submit" class="popup__button popup__button_save">Сохранить</button>
         </form>
       </div>
@@ -65,11 +67,13 @@
         <button class="popup__close popup__close-button_photo" type="button">
           <img class="popup__close-icon" src="./img/close.svg" alt="Закрыть окно">
         </button>
-        <form class="popup__content popup__content_photo" name="popup-add-photo" method="post">
+        <form class="popup__content popup__content_photo" name="popup-add-photo" method="post" novalidate>
           <h2 class="popup__title">Новое место</h2>
-          <input type="text" class="popup__text popup__text_img-name" name="name" placeholder="Имя" value="" />
-          <input type="text" class="popup__text popup__text_link" name="link" placeholder="Ссылка на картинку" value="" />
-          <button type="submit" class="popup__button popup__button_create">Создать</button>
+          <input id="photo-name" minlength="2" maxlength="30" type="text" class="popup__text popup__text_img-name" name="name" placeholder="Имя" required>
+          <span id="photo-name-error" class="popup__text-error"></span>
+          <input id="link" type="url" class="popup__text popup__text_link" name="link" placeholder="Ссылка на картинку" required>
+          <span id="link-error" class="popup__text-error"></span>
+          <button type="submit" class="popup__button popup__button_create" disabled>Создать</button>
         </form>
       </div>
     </section>
@@ -88,6 +92,7 @@
       <p class="footer__content">© 2020 Mesto Russia</p>  
     </footer>
 
-    <script src="./js/script.js"></script>    
+    <script src="./js/script.js"></script>
+    <script src="./js/validate.js"></script>     
 </body>
 </html>

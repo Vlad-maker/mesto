@@ -4,11 +4,10 @@
   background: none;
   color: #000; 
   border: none;
-  margin-bottom: 30px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   padding-bottom: 12px;
 }
 
-.popup__text:last-of-type {
+/*.popup__text:last-of-type {
   margin-bottom: 48px;
-}
+}*/
