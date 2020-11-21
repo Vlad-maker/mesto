@@ -153,9 +153,9 @@ closePopupBtn.addEventListener('click', () => closePopup(popupPhoto));
 addPopupContent.addEventListener('submit', addPopupContentSubmit);
 editBtn.addEventListener('click', openPopupInfo);
 formElement.addEventListener('submit', formSubmitHandler);
-popupInfo.addEventListener('click', clickOverlayClosePopupListener(popupInfo));
-popupPhoto.addEventListener('click', clickOverlayClosePopupListener(popupPhoto));
-popupImg.addEventListener('click', clickOverlayClosePopupListener(popupImg));
+popupInfo.addEventListener('mousedown', clickOverlayClosePopupListener(popupInfo));
+popupPhoto.addEventListener('mousedown', clickOverlayClosePopupListener(popupPhoto));
+popupImg.addEventListener('mousedown', clickOverlayClosePopupListener(popupImg));
 
 //Добавляем карточки на страницу 
 initialCards.forEach((data) => {
