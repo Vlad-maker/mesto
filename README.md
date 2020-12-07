@@ -1,4 +1,4 @@
-# Проект 4-6: Место  
+# Проект: Место  
 
 [Mesto](https://vlad-maker.github.io/mesto/)  
 
