@@ -45,13 +45,13 @@
       </ul>
       </section>
     </main>
-
+    
     <section class="popup popup_info"> 
       <div class="popup__container">
         <button class="popup__close popup__close-button_info" type="button">
           <img class="popup__close-icon" src="./img/close.svg" alt="Закрыть окно">
         </button>
-        <form class="popup__content" name="profile" novalidate>
+        <form class="popup__content popup__content_info" name="profile" novalidate>
             <h2 class="popup__title">Редактировать профиль</h2>
             <input id="name" minlength="2" maxlength="40" autocomplete="off" type="text" class="popup__text popup__text_name" name="name" placeholder="Имя" required>
             <span id="name-error" class="popup__text-error"></span>
@@ -91,8 +91,6 @@
     <footer class="footer">
       <p class="footer__content">© 2020 Mesto Russia</p>  
     </footer>
-
-    <script src="./js/script.js"></script>
-    <script src="./js/validate.js"></script>     
+    <script src="./js/script.js" type="module"></script>
 </body>
 </html>
