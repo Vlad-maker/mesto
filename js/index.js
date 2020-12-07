@@ -1,5 +1,5 @@
 import { Card } from './Card.js';
-import { FormValidation } from './FormValidation.js';
+import { FormValidation } from './FormValidator.js';
 import { initialCards } from './InitialCards.js';
 
 const cardContainer = document.querySelector('.cards__grid');

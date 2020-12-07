@@ -1,4 +1,4 @@
-import {openImgPopup} from './script.js';
+import {openImgPopup} from './index.js';
 
 //Kонструктор карточки
 export class Card {
