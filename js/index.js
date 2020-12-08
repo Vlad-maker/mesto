@@ -7,8 +7,8 @@ const template = document.querySelector('#template');
 
 const addButton = document.querySelector('.profile__button');
 const editBtn = document.querySelector('.profile__info-button');
-const closeBtnInfo = document.querySelector('.popup__close-button_block_info');
-const closePopupBtn = document.querySelector('.popup__close-button_block_photo');
+const closeBtnInfo = document.querySelector('.popup__close_block_info');
+const closePopupBtn = document.querySelector('.popup__close_block_photo');
 
 const popupInfo = document.querySelector('.popup_info');
 const popupPhoto = document.querySelector('.popup_photo');
@@ -26,7 +26,7 @@ const jobInput = popupInfo.querySelector('.popup__text_description');
 const popupImg = document.querySelector('.img-popup');
 const popupImgPhoto = popupImg.querySelector('.img-popup__photo');
 const popupImgCaption = popupImg.querySelector('.img-popup__caption');
-const closePopupBtnImg = popupImg.querySelector('.popup__close-button_block_img');
+const closePopupBtnImg = popupImg.querySelector('.popup__close_block_img');
 
 const formConfig = {
     formSelector: '.popup__content',
