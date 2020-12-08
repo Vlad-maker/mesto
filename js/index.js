@@ -7,8 +7,8 @@ const template = document.querySelector('#template');
 
 const addButton = document.querySelector('.profile__button');
 const editBtn = document.querySelector('.profile__info-button');
-const closeBtnInfo = document.querySelector('.popup__close-button_info');
-const closePopupBtn = document.querySelector('.popup__close-button_photo');
+const closeBtnInfo = document.querySelector('.popup__close-button_block_info');
+const closePopupBtn = document.querySelector('.popup__close-button_block_photo');
 
 const popupInfo = document.querySelector('.popup_info');
 const popupPhoto = document.querySelector('.popup_photo');
@@ -26,7 +26,7 @@ const jobInput = popupInfo.querySelector('.popup__text_description');
 const popupImg = document.querySelector('.img-popup');
 const popupImgPhoto = popupImg.querySelector('.img-popup__photo');
 const popupImgCaption = popupImg.querySelector('.img-popup__caption');
-const closePopupBtnImg = popupImg.querySelector('.popup__close-button_img');
+const closePopupBtnImg = popupImg.querySelector('.popup__close-button_block_img');
 
 const formConfig = {
     formSelector: '.popup__content',
@@ -35,16 +35,16 @@ const formConfig = {
     inactiveButtonClass: 'popup__button_disabled',
     inputErrorClass: 'popup__text_type_error',
 }
-  
+
 const infoFormValidation = new FormValidation(formConfig, formPopupInfo);
-    infoFormValidation.enableValidation();
-  
+infoFormValidation.enableValidation();
+
 const imgFormValidation = new FormValidation(formConfig, addPopupContent);
-    imgFormValidation.enableValidation();
+imgFormValidation.enableValidation();
 
 //Добавляем карточки на страницу
 initialCards.forEach((data) => {
-    const cardItem = new Card (data.name, data.link, template);
+    const cardItem = new Card(data.name, data.link, template);
     cardContainer.append(cardItem.render());
 });
 
@@ -67,23 +67,23 @@ export function openImgPopup(picture, caption) {
     popupImgPhoto.src = picture;
     popupImgPhoto.alt = caption;
     popupImgCaption.textContent = caption;
-  
+
     openPopup(popupImg);
-  };
+};
 
 // Добавляем новую карточку из попапа
 const addPopupContentSubmit = (evt) => {
     evt.preventDefault();
-  
-    const cardItem = new Card (popupImgName.value, popupImgLink.value, template);
+
+    const cardItem = new Card(popupImgName.value, popupImgLink.value, template);
     cardContainer.prepend(cardItem.render());
-  
+
     closePopup(popupPhoto);
     addPopupContent.reset();
-  };
+};
 
 //Сохранили отредактированные данные
-function formSubmitHandler (evt) {
+function formSubmitHandler(evt) {
     evt.preventDefault();
     name.textContent = nameInput.value;
     profileJob.textContent = jobInput.value;
@@ -97,25 +97,25 @@ const closePopup = (popupName) => {
 };
 
 //Закрываем popup нажатием на escape
-const pressEscClosePopup =  (evt) => {
+const pressEscClosePopup = (evt) => {
     if (evt.key === "Escape") {
-      const openedPopup = document.querySelector('.popup_opened');
-      closePopup(openedPopup);
+        const openedPopup = document.querySelector('.popup_opened');
+        closePopup(openedPopup);
     }
 };
 
 //Закрываем попап нажатием на overlay
 const clickOverlayClosePopupListener = (popupName) => (evt) => {
     if (evt.target === evt.currentTarget) {
-      closePopup(popupName);
+        closePopup(popupName);
     }
-}; 
+};
 
 //Обработчики событий
 addButton.addEventListener('click', () => {
     openPopup(popupPhoto);
     imgFormValidation.enableValidation();
-  });
+});
 editBtn.addEventListener('click', openPopupInfo);
 formPopupInfo.addEventListener('submit', formSubmitHandler);
 addPopupContent.addEventListener('submit', addPopupContentSubmit);
@@ -125,5 +125,3 @@ closePopupBtnImg.addEventListener('click', () => closePopup(popupImg));
 popupImg.addEventListener('mousedown', clickOverlayClosePopupListener(popupImg));
 popupInfo.addEventListener('mousedown', clickOverlayClosePopupListener(popupInfo));
 popupPhoto.addEventListener('mousedown', clickOverlayClosePopupListener(popupPhoto));
-
-
