@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Место</title>
-    <link rel="stylesheet" href="pages/index.css">
 </head>
 
 <body class="root">
@@ -17,7 +16,7 @@
     <main class="content">
         <section class="profile">
             <div class="profile__content">
-                <img src="./img/kusto.jpg" alt="Исследователь океана Жак-Ив Кусто" class="profile__avatar">
+                <img src="<%=require('./img/kusto.jpg')%>" alt="Исследователь океана Жак-Ив Кусто" class="profile__avatar">
                 <div class="profile__info">
                     <div class="profile__info-travelers">
                         <h1 class="profile__info-name">Жак-Ив Кусто</h1>
@@ -50,7 +49,7 @@
     <section class="popup popup_info">
         <div class="popup__container">
             <button class="popup__close popup__close_block_info" type="button">
-          <img class="popup__close-icon" src="./img/close.svg" alt="Закрыть окно">
+          <img class="popup__close-icon" src="<%=require('./img/close.svg')%>" alt="Закрыть окно">
         </button>
             <form class="popup__content popup__content_info" name="profile" novalidate>
                 <h2 class="popup__title">Редактировать профиль</h2>
@@ -66,7 +65,7 @@
     <section class="popup popup_photo">
         <div class="popup__container">
             <button class="popup__close popup__close_block_photo" type="button">
-          <img class="popup__close-icon" src="./img/close.svg" alt="Закрыть окно">
+          <img class="popup__close-icon" src="<%=require('./img/close.svg')%>" alt="Закрыть окно">
         </button>
             <form class="popup__content popup__content_photo" name="popup-add-photo" method="post" novalidate>
                 <h2 class="popup__title">Новое место</h2>
@@ -82,7 +81,7 @@
     <section class="popup img-popup">
         <div class="popup__container popup__container_img">
             <button class="popup__close popup__close_block_img" type="button">
-          <img class="popup__close-icon" src="./img/close.svg" alt="Закрыть окно">
+          <img class="popup__close-icon" src="<%=require('./img/close.svg')%>" alt="Закрыть окно">
         </button>
             <img class="img-popup__photo" src="#" alt="Фото">
             <p class="img-popup__caption"></p>
@@ -92,7 +91,6 @@
     <footer class="footer">
         <p class="footer__content">© 2020 Mesto Russia</p>
     </footer>
-    <script src="./js/index.js" type="module"></script>
 </body>
 
 </html>
