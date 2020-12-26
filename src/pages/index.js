@@ -16,7 +16,7 @@ import {
     editBtn,
     popupImgName,
     popupImgLink
-} from '../js/Constants.js';
+} from '../js/constants.js';
 
 const infoFormValidation = new FormValidation(formConfig, formPopupInfo);
 infoFormValidation.enableValidation();
@@ -44,16 +44,9 @@ const popupPhotoForm = new PopupWithForm({
             () => {
                 popupWithImage.open(cardItem._name, cardItem._link);
             });
-        const newCardAdding = new Section({
-            items: [cardItem],
-            renderer: () => {
-                newCardAdding.addItem(cardItem.render());
-            }
-        }, cardContainer);
-        newCardAdding.render();
+        сardList.prependItem(cardItem.render())
 
         popupPhotoForm.close();
-        addPopupContent.reset();
     }
 });
 popupPhotoForm.setEventListeners();
@@ -66,7 +59,7 @@ const сardList = new Section({
             () => {
                 popupWithImage.open(card._name, card._link);
             });
-        сardList.addItem(card.render());
+        сardList.prependItem(card.render());
     }
 }, cardContainer);
 сardList.render();
@@ -91,11 +84,9 @@ editBtn.addEventListener('click', () => {
     const jobInput = popupInfoClass._form.querySelector('.popup__text_description');
     nameInput.value = profileData.name;
     jobInput.value = profileData.description;
-    infoFormValidation.enableValidation();
 });
 
 // Добавляем фото
 addButton.addEventListener('click', () => {
     popupPhotoForm.open();
-    imgFormValidation.enableValidation();
 });

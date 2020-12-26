@@ -11,11 +11,7 @@ export class Section {
         });
     }
 
-    addItem(cardElement) {
-        if (this._imagesArray.length > 1) {
-            this._container.append(cardElement);
-        } else {
-            this._container.prepend(cardElement);
-        }
+    prependItem(cardElement) {
+        this._container.prepend(cardElement)
     }
 }
