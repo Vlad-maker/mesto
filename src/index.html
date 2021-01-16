@@ -14,36 +14,43 @@
     </header>
 
     <main class="content">
+
         <section class="profile">
             <div class="profile__content">
-                <img src="<%=require('./img/kusto.jpg')%>" alt="Исследователь океана Жак-Ив Кусто" class="profile__avatar">
+                <span class="profile__img-wrapper">
+                    <button type="button" class="profile__edit-avatar-button"></button>
+                     <img class="profile__avatar" src="" alt="Фотография профиля">
+                </span>
                 <div class="profile__info">
-                    <div class="profile__info-travelers">
-                        <h1 class="profile__info-name">Жак-Ив Кусто</h1>
-                        <button class="profile__info-button" type="button"></button>
+                    <div class="profile__text">
+                        <h1 class="profile__info-name"></h1>
+                        <p class="profile__info-job"></p>
                     </div>
-                    <p class="profile__info-job">Исследователь океана</p>
+                    <button type="button" class="profile__info-button"></button>
                 </div>
             </div>
-            <button class="profile__button" type="button"></button>
+            <button type="button" class="profile__button"></button>
         </section>
 
         <section class="cards">
             <ul class="cards__grid">
                 <template id="template">
-        <li class="cards__content">
-          <button class="cards__deletion" type="button" aria-label="Удалить"></button>
-          <button type="button" class="cards__open-button">
-          <img class="cards__photo" src="#" alt="Фото из библиотеки">
-          </button>
-          <div class="cards__description">
-            <h2 class="cards__title"></h2>
-            <button class="cards__like" type="button" aria-label="Нравится"></button>
-          </div>
-        </li>
-      </template>
+                <li class="cards__content">
+                    <button class="cards__deletion" type="button"></button>
+                    <button type="button" class="cards__open-button">
+                    <img class="cards__photo" src="" alt="">
+                    </button>
+                     <div class="cards__description">
+                        <h2 class="cards__title"></h2>
+                        <div class="cards__like-section">
+                            <button class="cards__like" type="button"></button>
+                            <p class="cards__like-number"></p>
+                        </div>
+                </li>
+                </template>
             </ul>
         </section>
+
     </main>
 
     <section class="popup popup_info">
@@ -85,6 +92,26 @@
         </button>
             <img class="img-popup__photo" src="#" alt="Фото">
             <p class="img-popup__caption"></p>
+        </div>
+    </section>
+
+    <section class="popup popup_submit">
+        <div class="popup__container">
+            <button type="button" class="popup__close popup__close_block_submit"></button>
+            <h2 class="popup__title">Вы уверены?</h2>
+            <button type="button" class="popup__button popup__button_submit">Да</button>
+        </div>
+    </section>
+
+    <section class="popup popup_edit-avatar">
+        <div class="popup__container">
+            <button type="button" class="popup__close popup__close_block_submit"></button>
+            <h2 class="popup__title">Вы уверены?</h2>
+            <form class="popup__content popup__content_edit-avatar" name="popup-form-avatar" method="post" novalidate>
+                <input id="avatar" type="url" placeholder="Ссылка на аватар" name="link" class="popup__text popup__text_link" required>
+                <span id="avatar-error" class="popup__text-error"></span>
+                <button type="submit" class="popup__button popup__button_update">Сохранить</button>
+            </form>
         </div>
     </section>
 

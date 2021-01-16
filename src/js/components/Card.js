@@ -1,34 +1,45 @@
 export class Card {
-    constructor({ name, link, templateSelector, handleCardClick }) {
+    constructor({ name, link, templateSelector, handleCardClick, handleDeleteButtonClick, handleLikeButtonClick }) {
         this._name = name;
         this._link = link;
+        this.id = id;
         this._template = templateSelector;
         this._handleCardClick = handleCardClick;
+        this._handleDeleteButtonClick = handleDeleteButtonClick;
+        this._handleLikeButtonClick = handleLikeButtonClick;
+
+        this._content = this._template.content.cloneNode(true);
     }
 
-    _like(evt) {
-        evt.target.classList.toggle('cards__like_active');
+    like() {
+        this.likeButton.classList.toggle('cards__like_active');
     }
 
-    _delete(evt) {
-        evt.target.closest('.cards__content').remove();
+    delete() {
+        this._deleteButton.closest('.cards__content').remove();
+    }
+
+    setNumberOfLikes(amount) {
+        this._likeNumber.textContent = amount;
     }
 
     render() {
-        this._content = this._template.content.cloneNode(true);
+
         this._title = this._content.querySelector('.cards__title');
         this._picture = this._content.querySelector('.cards__photo');
+
         this._deleteButton = this._content.querySelector('.cards__deletion');
-        this._likeButton = this._content.querySelector('.cards__like');
+        this.likeButton = this._content.querySelector('.cards__like');
         this._popupButton = this._content.querySelector('.cards__open-button');
+        this._likeNumber = this._content.querySelector('.cards__like-number');
 
         this._title.textContent = this._name;
         this._picture.alt = this._name;
         this._picture.src = this._link;
 
-        this._deleteButton.addEventListener('click', this._delete);
-        this._likeButton.addEventListener('click', this._like);
-        this._popupButton.addEventListener('click', () => this._handleCardClick());
+        this._deleteButton.addEventListener('click', this._handleDeleteButtonClick);
+        this.likeButton.addEventListener('click', this._handleLikeButtonClick);
+        this._popupButton.addEventListener('click', this._handleCardClick);
 
         return this._content;
     }

@@ -1,0 +1,9 @@
+.profile__img-wrapper {
+    display: inline-block;
+    margin-right: 25px;
+    border-radius: 50%;
+    max-width: 120px;
+    height: 120px;
+    overflow: hidden;
+    position: relative;
+}
