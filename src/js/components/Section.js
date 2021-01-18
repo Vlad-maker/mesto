@@ -4,14 +4,16 @@ export class Section {
         this._renderer = renderer;
         this._container = containerSelector;
     }
-
     render() {
         this._imagesArray.forEach(cardElement => {
             this._renderer(cardElement);
         });
     }
-
-    prependItem(cardElement) {
-        this._container.prepend(cardElement)
+    addItem(cardElement) {
+        if (this._imagesArray.length > 1) {
+            this._container.append(cardElement);
+        } else {
+            this._container.prepend(cardElement);
+        }
     }
-}
+};

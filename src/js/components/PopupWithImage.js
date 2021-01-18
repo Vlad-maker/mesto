@@ -12,4 +12,4 @@ export class PopupWithImage extends Popup {
         this._picture.alt = caption;
         this._caption.textContent = caption;
     }
-}
+};

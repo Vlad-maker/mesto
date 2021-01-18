@@ -14,12 +14,11 @@
     </header>
 
     <main class="content">
-
         <section class="profile">
             <div class="profile__content">
                 <span class="profile__img-wrapper">
                     <button type="button" class="profile__edit-avatar-button"></button>
-                     <img class="profile__avatar" src="" alt="Фотография профиля">
+                     <img class="profile__avatar" src="" alt="Фото">
                 </span>
                 <div class="profile__info">
                     <div class="profile__text">
@@ -31,12 +30,11 @@
             </div>
             <button type="button" class="profile__button"></button>
         </section>
-
         <section class="cards">
             <ul class="cards__grid">
                 <template id="template">
                 <li class="cards__content">
-                    <button class="cards__deletion" type="button"></button>
+                    <button type="button" class="cards__deletion"></button>
                     <button type="button" class="cards__open-button">
                     <img class="cards__photo" src="" alt="">
                     </button>
@@ -50,7 +48,6 @@
                 </template>
             </ul>
         </section>
-
     </main>
 
     <section class="popup popup_info">
@@ -97,7 +94,9 @@
 
     <section class="popup popup_submit">
         <div class="popup__container">
-            <button type="button" class="popup__close popup__close_block_submit"></button>
+            <button type="button" class="popup__close popup__close_block_submit">
+                <img class="popup__close-icon" src="<%=require('./img/close.svg')%>" alt="Закрыть окно">
+            </button>
             <h2 class="popup__title">Вы уверены?</h2>
             <button type="button" class="popup__button popup__button_submit">Да</button>
         </div>
@@ -105,8 +104,10 @@
 
     <section class="popup popup_edit-avatar">
         <div class="popup__container">
-            <button type="button" class="popup__close popup__close_block_submit"></button>
-            <h2 class="popup__title">Вы уверены?</h2>
+            <button type="button" class="popup__close popup__close_block_submit">
+                <img class="popup__close-icon" src="<%=require('./img/close.svg')%>" alt="Закрыть окно">
+            </button>
+            <h2 class="popup__title">Сменить аватар</h2>
             <form class="popup__content popup__content_edit-avatar" name="popup-form-avatar" method="post" novalidate>
                 <input id="avatar" type="url" placeholder="Ссылка на аватар" name="link" class="popup__text popup__text_link" required>
                 <span id="avatar-error" class="popup__text-error"></span>

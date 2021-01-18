@@ -3,22 +3,19 @@ export class Api {
         this._url = options.url;
         this._headers = options.headers;
     }
-
-    handleOriginalResponse(res) {
+    handleResponse(res) {
         if (res.ok) {
             return res.json();
         }
 
         return Promise.reject(`Ошибка: ${res.status}`);
     }
-
     getInitialCards() {
         return fetch(`${this._url}cards`, {
                 headers: this._headers
             })
-            .then(res => this.handleOriginalResponse(res));
+            .then(res => this.handleResponse(res));
     }
-
     addCard(cardName, cardLink) {
         return fetch(`${this._url}cards`, {
                 method: 'POST',
@@ -28,24 +25,21 @@ export class Api {
                     link: cardLink
                 })
             })
-            .then(res => this.handleOriginalResponse(res));
+            .then(res => this.handleResponse(res));
     }
-
     deleteCard(cardId) {
         return fetch(`${this._url}cards/${cardId}`, {
                 method: 'DELETE',
                 headers: this._headers,
             })
-            .then(res => this.handleOriginalResponse(res));
+            .then(res => this.handleResponse(res));
     }
-
     getProfileData() {
         return fetch(`${this._url}users/me`, {
                 headers: this._headers
             })
-            .then(res => this.handleOriginalResponse(res));
+            .then(res => this.handleResponse(res));
     }
-
     updateProfileData(newName, newAbout) {
         return fetch(`${this._url}users/me`, {
                 method: 'PATCH',
@@ -55,9 +49,8 @@ export class Api {
                     about: newAbout
                 })
             })
-            .then(res => this.handleOriginalResponse(res));
+            .then(res => this.handleResponse(res));
     }
-
     updateProfileAvatar(newAvatar) {
         return fetch(`${this._url}users/me/avatar`, {
                 method: 'PATCH',
@@ -66,23 +59,21 @@ export class Api {
                     avatar: newAvatar
                 })
             })
-            .then(res => this.handleOriginalResponse(res));
+            .then(res => this.handleResponse(res));
     }
-
     setLike(cardId) {
         return fetch(`${this._url}cards/likes/${cardId}`, {
                 method: 'PUT',
                 headers: this._headers
             })
-            .then(res => this.handleOriginalResponse(res));
+            .then(res => this.handleResponse(res));
     }
-
     removeLike(cardId) {
         return fetch(`${this._url}cards/likes/${cardId}`, {
                 method: 'DELETE',
                 headers: this._headers
             })
-            .then(res => this.handleOriginalResponse(res));
+            .then(res => this.handleResponse(res));
     }
 
-}
+};

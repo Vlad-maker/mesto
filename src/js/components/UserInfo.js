@@ -3,16 +3,20 @@ export class UserInfo {
         this._name = document.querySelector(nameSelector);
         this._description = document.querySelector(jobSelector);
     }
-
     getUserInfo() {
         return {
             name: this._name.textContent,
             description: this._description.textContent
         };
     }
-
     setUserInfo(newName, newJob) {
         this._name.textContent = newName;
         this._description.textContent = newJob;
     }
-}
+    setUserId(newId) {
+        this._id = newId;
+    }
+    getUserId() {
+        return this._id;
+    }
+};

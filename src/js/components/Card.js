@@ -1,5 +1,5 @@
 export class Card {
-    constructor({ name, link, templateSelector, handleCardClick, handleDeleteButtonClick, handleLikeButtonClick }) {
+    constructor({ name, link, id, templateSelector, handleCardClick, handleDeleteButtonClick, handleLikeButtonClick }) {
         this._name = name;
         this._link = link;
         this.id = id;
@@ -10,24 +10,19 @@ export class Card {
 
         this._content = this._template.content.cloneNode(true);
     }
-
-    like() {
-        this.likeButton.classList.toggle('cards__like_active');
-    }
-
     delete() {
         this._deleteButton.closest('.cards__content').remove();
     }
-
+    like() {
+        this.likeButton.classList.toggle('cards__like_active');
+    }
     setNumberOfLikes(amount) {
         this._likeNumber.textContent = amount;
     }
 
     render() {
-
         this._title = this._content.querySelector('.cards__title');
         this._picture = this._content.querySelector('.cards__photo');
-
         this._deleteButton = this._content.querySelector('.cards__deletion');
         this.likeButton = this._content.querySelector('.cards__like');
         this._popupButton = this._content.querySelector('.cards__open-button');

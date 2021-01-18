@@ -1,21 +1,19 @@
 .cards__deletion {
-  width: 19px;
-  height: 19px;
-  border: none;
-  background: none;
-  background-image: url(../../../img/delete.svg);
-  background-repeat: no-repeat;
-  background-size: 19px;
-  background-position: center;
-  cursor: pointer;
-  transition: opacity 0.3s linear;
-  position: absolute;
-  top: 18px;
-  right: 16px;
-  
- 
+    width: 19px;
+    height: 19px;
+    border: none;
+    background: none;
+    background-image: url(../../../img/delete.svg);
+    background-repeat: no-repeat;
+    background-size: 19px;
+    background-position: center;
+    cursor: pointer;
+    transition: opacity 0.3s linear;
+    position: absolute;
+    top: 18px;
+    right: 16px;
 }
 
 .cards__deletion:hover {
-  opacity: 0.6;
+    opacity: 0.6;
 }
