@@ -1,12 +1,12 @@
 import './index.css';
-import { Api } from '../js/components/Api.js';
-import { Card } from '../js/components/Card.js';
-import { Section } from '../js/components/Section.js';
-import { UserInfo } from '../js/components/UserInfo.js';
-import { FormValidation } from '../js/components/FormValidator.js';
-import { PopupWithForm } from '../js/components/PopupWithForm.js';
-import { PopupWithImage } from '../js/components/PopupWithImage.js';
-import { PopupWithSubmit } from '../js/components/PopupWithSubmit.js';
+import { Api } from '../components/Api.js';
+import { Card } from '../components/Card.js';
+import { Section } from '../components/Section.js';
+import { UserInfo } from '../components/UserInfo.js';
+import { FormValidation } from '../components/FormValidator.js';
+import { PopupWithForm } from '../components/PopupWithForm.js';
+import { PopupWithImage } from '../components/PopupWithImage.js';
+import { PopupWithSubmit } from '../components/PopupWithSubmit.js';
 import {
     formConfig,
     addPopupContent,
@@ -20,9 +20,11 @@ import {
     profileAvatar,
     popupImgName,
     popupImgLink
-} from '../js/constants.js';
+} from '../utils/constants.js';
 
 const userInfo = new UserInfo('.profile__info-name', '.profile__info-job');
+const nameInput = document.querySelector('.popup__text_name');
+const jobInput = document.querySelector('.popup__text_description');
 
 const api = new Api({
     url: 'https://mesto.nomoreparties.co/v1/cohort-19/',
@@ -38,7 +40,7 @@ function renderLoading(isLoading, submitButtonSelector, defaultMessage) {
     } else {
         document.querySelector(submitButtonSelector).textContent = defaultMessage;
     }
-};
+}
 
 // Проверяем лайки
 function hasMyLike(myId) {
@@ -160,7 +162,6 @@ addButton.addEventListener('click', () => {
 // Изменить аватар
 editAvatarButton.addEventListener('click', () => {
     popupAvatarClass.open();
-    avatarFormValidation.enableValidation();
 });
 
 // Попап загрузки аватара
@@ -204,8 +205,6 @@ popupInfoClass.setEventListeners();
 editBtn.addEventListener('click', () => {
     popupInfoClass.open();
     const profileData = userInfo.getUserInfo();
-    const nameInput = popupInfoClass._form.querySelector('.popup__text_name');
-    const jobInput = popupInfoClass._form.querySelector('.popup__text_description');
     nameInput.value = profileData.name;
     jobInput.value = profileData.description;
 });
