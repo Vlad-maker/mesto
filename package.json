@@ -6,8 +6,8 @@
     "scripts": {
         "build": "webpack --mode production",
         "dev": "webpack serve",
-        "deploy": "gh-pages -d dist",
-        "predeploy": "npm run build"
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d dist"
     },
     "repository": {
         "type": "git",
