@@ -30,7 +30,7 @@
 <img align="left" width="22px" src="https://simpleicons.org/icons/javascript.svg" />
 <img align="left" width="22px" src="https://simpleicons.org/icons/webpack.svg" />
 
-***  
+</br>  
 ##### Будущие обновления:
 
 - [ ] Переписать CSS на SCSS
