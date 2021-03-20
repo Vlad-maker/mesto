@@ -24,6 +24,7 @@
 
 ***
 **Технологии:**  
+
 <img align="left" width="22px" src="https://simpleicons.org/icons/html5.svg" />
 <img align="left" width="22px" src="https://simpleicons.org/icons/css3.svg" />
 <img align="left" width="22px" src="https://simpleicons.org/icons/javascript.svg" />
