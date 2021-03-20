@@ -31,7 +31,6 @@
 <img align="left" width="22px" src="https://simpleicons.org/icons/webpack.svg" />
 
 ***  
-
 ##### Будущие обновления:
 
 - [ ] Переписать CSS на SCSS
